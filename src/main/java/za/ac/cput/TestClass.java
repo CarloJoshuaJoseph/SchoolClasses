@@ -5,13 +5,21 @@
  * 12 March 2023
  */
 package za.ac.cput;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Timeout;
+
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.Assert.*;
 
 public class TestClass {
-    public void testOClassEquality() {
-        Class c1 = new Class("English", "Mr. Johnson", "brad");
-        Class c2 = new Class("English", "Mr. Johnson", "brad");
+
+    @Test
+    public void testClassEquality() {
+        Classes c1 = new Classes("English", "Mr. Johnson", "brad");
+        Classes c2 = c1;
         assertEquals(c1, c2);
     }
 @Test
@@ -21,10 +29,21 @@ public class TestClass {
         assertSame(c1, c2);
     }
     @Test
-    public void testClassTest() {
-        Class c1 = new Class("Math", "Mr. Johnson", "Jack");
-        Class c2 = new Class("Math", "Mr. Johnson", "Daniels");
+
+    public void testClassFailing() {
+        Classes c1 = new Classes("Math", "Mr. Johnson", "Jack");
+        Classes c2 = new Classes("Math", "Mr. Johnson", "Daniels");
         assertEquals(c1, c2);
+    }
+    @Test(timeout = 90000000)
+    public void testClassTime() {
+
+    }
+
+    @Ignore()
+    @Test
+    public void disablingTest(){
+        fail("ignore doesnt seem to work");
     }
 
 }
