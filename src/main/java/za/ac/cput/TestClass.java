@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.*;
 
 public class TestClass {
+
     @Test
     public void testClassEquality() {
         Classes c1 = new Classes("English", "Mr. Johnson", "brad");
@@ -23,11 +24,12 @@ public class TestClass {
     }
 @Test
     public void testClassIdentity() {
-        Classes c1 = new Classes("English", "Mr. Naidoo", "BabaGworl");
-        Classes c2 = c1;
+        Class c1 = new Class("English", "Mr. Naidoo", "BabaGworl");
+        Class c2 = c1;
         assertSame(c1, c2);
     }
     @Test
+
     public void testClassFailing() {
         Classes c1 = new Classes("Math", "Mr. Johnson", "Jack");
         Classes c2 = new Classes("Math", "Mr. Johnson", "Daniels");
